@@ -245,21 +245,21 @@ async def mentionalladmin(event):
     if msg == None:
         return await event.respond("**Eski Mesajlar için Üyelerden Bahsedemem! (gruba eklemeden önce gönderilen mesajlar)**")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("**Bana Bir Metin Ver!**")
+    return await event.respond("**Mənə Bir Mətin Ver!**")
   else:
-    return await event.respond("**Bir Mesajı Yanıtlayın veya Başkalarından Bahsetmem için Bana Bir Betin Verin!**")
+    return await event.respond("**Bir Mesajı Yanıtlayın veya Başqalarından Danışmam üçün Mənə Bir Mətin Verin!**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    await event.respond("**Admin Etiket işlemi Başarıyla Başlatıldı.!**")
+    await event.respond("**Admin Etiket işlemi Uğurla Başlatıldı.!**")
   
     async for usr in client.iter_participants(event.chat_id,filter=ChannelParticipantsAdmins):
       usrnum += 1
       usrtxt += f"\n**👤 - [{usr.first_name}](tg://user?id={usr.id}) **"
       if event.chat_id not in anlik_calisan:
-        await event.respond("**Etiket İşlemi Bitti.!**")
+        await event.respond("**Etiket İşlemi Dayandı.!**")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{msg}\n\n{usrtxt}")

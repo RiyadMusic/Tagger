@@ -58,7 +58,7 @@ app = Client("GUNC",
 
 anlik_calisan = []
 
-ozel_list = [5105453716]
+ozel_list = [1726242069]
 anlik_calisan = []
 grup_sayi = []
 etiketuye = []
@@ -68,7 +68,7 @@ rxyzdev_initT = {}
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def info(event):
-  await event.reply("**Salam Mənim Ve Sahibim Hakkında Bilgi\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim:  Gruplarınızda Üyeleri Etiketlemek için Yaratılmışım**",
+  await event.reply("**Salam Mənim Ve Sahibim Hakkında Məlumat\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim:  Gruplarınızda Üyeleri Etiketlemek için Yaradılmışam**",
                     buttons=(
                       [
                        Button.url('Beni Grubuna Ekle ➕', 'https://t.me/DTGTaggerbot?startgroup=a')

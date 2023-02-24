@@ -277,7 +277,7 @@ async def mentionalladmin(event):
       usrnum += 1
       usrtxt += f"\n**👤 - [{usr.first_name}](tg://user?id={usr.id}) **"
       if event.chat_id not in anlik_calisan:
-        await event.respond("**İşlem Durduruldu.!**")
+        await event.respond("**İşlem Dayandırıldı.!**")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -287,10 +287,10 @@ async def mentionalladmin(event):
 
     sender = await event.get_sender()
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"
-    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**Etiket İşlemi Başarıyla Tamamlandı !.\n\n**Etiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}")
+    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**Etiket İşlemi Uğurla Tamamlandı !.\n\n**Etiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}")
 
 
 
 app.run()
-print(">> Bot çalışıyor @Hayiboo Tarafından Kuruldu<<")
+print(">> Bot çalışıyor @RiyadAndMe Tarafından Kuruldu<<")
 client.run_until_disconnected()

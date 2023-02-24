@@ -126,11 +126,11 @@ async def handler(event):
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('Beni Grubuna Ekle', 'https://t.me/DTGTaggerBot?startgroup=a'),
+                       Button.url('Kanal', 'https://t.me/RiyaddBlogg')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim', 'https://t.me/RiyadAndMe')
                       ],
                     ),
                     link_preview=False)
@@ -160,13 +160,13 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**Bu Komut Sadace Grublarda ve Kanallarda Kullanıma Bilir**")
+    return await event.respond("**Bu Komut Sadace Qrublarda ve Kanallarda Kullanıma Bilir**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Yalnızca Yöneticiler Etiket işlemini Yapabilir**")
+    return await event.respond("**Yalnızca Yöneticiler Etiket edə bilər**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -175,17 +175,17 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("**Eski Mesajlar için Üyelerden Bahsedemem! (gruba eklemeden önce gönderilen mesajlar)**")
+        return await event.respond("**Eski Mesajlar için Üyelerden danışamam! (gruba eklemeden önce gönderilen mesajlar)**")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("**Bana Bir Metin Ver!**")
   else:
-    return await event.respond("**Bir Mesajı Yanıtlayın veya Başkalarından Bahsetmem için Bana Bir Betin Verin!!**")
+    return await event.respond("**Bir Mesajı Yanıtlayın veya Başkalarından danışmam üçün mənə Bir Mətin Verin!!**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    await event.respond(f"**Etiket işlemi Başarıyla Başlatıldı.!**")
+    await event.respond(f"**Etiket işlemi Uğurla Başlatıldı.!**")
         
     async for usr in client.iter_participants(event.chat_id, aggressive=False):
       rxyzdev_tagTot[event.chat_id] += 1
@@ -201,7 +201,7 @@ async def mentionall(event):
         
     sender = await event.get_sender()
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"
-    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Başarıyla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
+    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Uğurla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
   
   if mode == "text_on_reply":
     anlik_calisan.append(event.chat_id)
@@ -222,19 +222,19 @@ async def mentionall(event):
      
     sender = await event.get_sender()
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
-    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Başarıyla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
+    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Uğurla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
 
 @client.on(events.NewMessage(pattern="^/atag ?(.*)"))
 async def mentionalladmin(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("**Bu Komut Yalnızca Grublarda Ve Kanallarda Kullanıma Bilir!**")
+    return await event.respond("**Bu Komut Yalnızca Qrublarda Ve Kanallarda Kullanıma Bilir!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Yalnızca Yöneticiler Etiket İşlemini Yapabilir**")
+    return await event.respond("**Yalnızca Yöneticiler Etiket Edə bilər **")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
